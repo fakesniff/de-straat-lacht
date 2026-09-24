@@ -285,6 +285,47 @@ section { scroll-margin-top: var(--topbar-height); }
   margin-top: clamp(1.5rem, 4vw, 2.5rem);
 }
 
+/* Wat De Straat Lacht doet: contact onder de korte omschrijving. */
+.contact {
+  display: grid;
+  gap: 0.25rem;
+  margin: clamp(2rem, 5vw, 3rem) 0 0;
+}
+
+.contact__label {
+  color: var(--gray);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact a {
+  justify-self: start;
+  padding-block: 0.4rem;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-underline-offset: 0.2em;
+}
+
+/* Volg De Straat Lacht: vier gelijke knoppen, op mobiel twee per rij. */
+.content-column > .socials { max-width: 48rem; }
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socials .button { width: 100%; }
+
+.button--outline { background: transparent; color: var(--white); }
+.button--outline:hover { background: var(--white); color: var(--black); }
+
 .footer { border-top: 1px solid var(--line); }
 
 .footer a {
@@ -311,6 +352,7 @@ section { scroll-margin-top: var(--topbar-height); }
   .button-row .button { width: 100%; }
   .section h2 { font-size: clamp(2.8rem, 13vw, 4.5rem); line-height: 1.04; }
   .content-column > .statement { font-size: clamp(2.6rem, 12.5vw, 4.5rem); line-height: 1.04; }
+  .socials { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 420px) {
