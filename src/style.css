@@ -107,6 +107,54 @@ section { scroll-margin-top: var(--topbar-height); }
 .nav a { color: #b5b4af; transition: color 180ms ease; }
 .nav a:hover { color: var(--white); }
 
+/* Shirt-blok bovenaan: tekst links, foto rechts. Op mobiel tekst en knop eerst. */
+.drop { border-bottom: 1px solid var(--line); }
+
+.drop__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  padding-block: clamp(2rem, 5vh, 3.5rem);
+}
+
+.drop__kicker {
+  margin-bottom: 1rem;
+  color: var(--gray);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.drop h2 {
+  margin-bottom: 1.25rem;
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(3.4rem, 8.5vw, 7.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.drop__intro {
+  max-width: 28rem;
+  margin-bottom: 2rem;
+  color: #cfcec9;
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+  line-height: 1.5;
+}
+
+.drop__photo { display: block; }
+
+.drop__photo img {
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+  object-fit: contain;
+  background: #fff;
+}
+
 .hero__inner {
   display: grid;
   justify-items: center;
@@ -347,6 +395,9 @@ section { scroll-margin-top: var(--topbar-height); }
 
 @media (max-width: 680px) {
   .brand span { display: none; }
+  .drop__inner { grid-template-columns: 1fr; }
+  .drop .button { width: 100%; }
+  .drop__photo img { max-height: 55vh; }
   .hero-logo > img { height: clamp(220px, 42vh, 400px); }
   .button-row { width: min(100%, 20rem); }
   .button-row .button { width: 100%; }
